@@ -6,6 +6,9 @@
 
 void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot)
 {
+    larger = nullptr; //makes sure that the node is null
+    smaller = nullptr; //makes sure that node is null
+
     //base case - head is null;
     if (head == nullptr)
     {
@@ -15,19 +18,19 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot)
     {
         if (head->val > pivot) //places into larger
         {
-            Node* temp_head = head;
-            head = NULL;
-            *larger = *temp_head;
+            larger = head;
+            Node* next_head = head->next;
+            head = nullptr;
 
-            llpivot (temp_head->next, smaller, larger->next, pivot);
+            llpivot (next_head, smaller, larger->next, pivot); //moves onto next head and next larger node
         }
         else //places into smaller
         {
-            Node* temp_head = head;
-            head = NULL;
-            *smaller = *temp_head;
-
-            llpivot (temp_head, smaller->next, larger, pivot);
+            smaller = head;
+            Node* next_head = head->next;
+            head = nullptr;
+            
+            llpivot (next_head, smaller->next, larger, pivot); //moves onto next head and next smaller node
         }
     }
     

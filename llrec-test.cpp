@@ -87,6 +87,31 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+    Node* larger = NULL;
+    Node* smaller = NULL;
+
+    cout << "running pivot" << endl;
+    llpivot (head, smaller, larger, 11);
+
+    cout << "larger list: ";
+    print(larger);
+
+    cout << "smaller list: ";
+    print (smaller);
+
+    cout << "original list after split: ";
+    print (head);
+
+    cout << "resetting head list: ";
+    head = readList(argv[1]);
+    print(head);
+
+    cout << "running filter: ";
+    Node* filtered_head = llfilter(head, 11);
+
+    cout << "filtered list: ";
+    print(filtered_head);
+
 
 
     
