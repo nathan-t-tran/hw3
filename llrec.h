@@ -91,20 +91,25 @@ Node* llfilter(Node* head, Comp pred)
 
     if ((pred%2)==0)// if pred is even
     {
-        if (head->val % 2 == 0)
+        if (head->val % 2 == 0) //if head value is even
         {
-            Node* next_head = head->next; //gets the next node from head
-            head = nullptr; //deletes head
-            head = next_head; //sets the next node as the new head
-            llfilter (head, pred);
+            
+        }
+        else //if odd
+        {
+            
         }
     }
-    else //if pred is odd
+    else if ((pred%2) != 0)//if pred is odd
     {
-        Node* next_head = head->next; //gets the next node from head
-        head = nullptr; //deletes head
-        head = next_head; //sets the next node as the new head
-        llfilter (head, pred);
+        if (head->val % 2 == 0) //if head value is even
+        {
+
+        }
+        else //if odd
+        {
+            
+        }
     }
 
 }

@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
     head = readList(argv[1]);
     print(head);
 
-    cout << "running filter: ";
+    cout << "running filter: " << endl;
     Node* filtered_head = llfilter(head, 11);
 
     cout << "filtered list: ";
