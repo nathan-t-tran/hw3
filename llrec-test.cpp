@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
     print(head);
 
     cout << "running filter: " << endl;
-    Node* filtered_head = llfilter(head, 11);
+    Node* filtered_head = llfilter(head, 2);
 
     cout << "filtered list: ";
     print(filtered_head);

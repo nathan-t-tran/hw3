@@ -1,8 +1,11 @@
 #ifndef LLREC_H
 #define LLREC_H
+#include <iostream>
 #ifndef NULL
 #define NULL 0
 #endif
+
+using namespace std;
 
 /**
  * Node struct for both problems
@@ -81,37 +84,29 @@ Node* llfilter(Node* head, Comp pred);
 template <typename Comp>
 Node* llfilter(Node* head, Comp pred)
 {
+    bool DEBUG = true;
     //*********************************************
     // Provide your implementation below
     //*********************************************
+    if (DEBUG && head != nullptr)
+    {
+        cout << "curr head val: " << head->val << endl;
+    }
+
     if (head == nullptr)
     {
-        return NULL;
+        return nullptr;
     }
+    
+    head->next = llfilter (head->next, pred);
 
-    if ((pred%2)==0)// if pred is even
+    if (pred(head->val))// if the value is true to pred;
     {
-        if (head->val % 2 == 0) //if head value is even
-        {
-            
-        }
-        else //if odd
-        {
-            
-        }
+        Node* next = head->next;
+        delete head;
+        return next;
     }
-    else if ((pred%2) != 0)//if pred is odd
-    {
-        if (head->val % 2 == 0) //if head value is even
-        {
-
-        }
-        else //if odd
-        {
-            
-        }
-    }
-
+    return head;
 }
 
 #endif
