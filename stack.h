@@ -8,7 +8,7 @@ using namespace std;
 
 // Use inheritance from std::vector (choose public/private) as appropriate
 template <typename T>
-class Stack : private vector 
+class Stack : private vector<T> 
 {
 public:
     Stack();
@@ -27,7 +27,6 @@ Stack<T>::Stack(): vector<T>(){}
 template <typename T>
 Stack<T>::~Stack()
 {
-    clear; 
 }
 
 template <typename T>
@@ -52,7 +51,7 @@ void Stack<T>::pop()  // throws std::underflow_error if empty
 {
     if(empty())
     {
-        throw underflow_error;
+        throw underflow_error("Stack is empty");
     }
     else 
     {
@@ -65,11 +64,11 @@ const T& Stack<T>::top() const // throws std::underflow_error if empty
 {
     if(empty())
     {
-        throw underflow_error;
+        throw underflow_error("Stack is empty");
     }
     else 
     {
-        vector<T>::front();
+        vector<T>::back();
     }
 }
 
