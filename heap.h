@@ -86,6 +86,9 @@ Heap<T,PComparator>::Heap(int m, PComparator c): m(m), c(c)
 }
 
 template <typename T, typename PComparator>
+Heap<T,PComparator>::~Heap() {}
+
+template <typename T, typename PComparator>
 void Heap<T,PComparator>::push(const T& item)
 {
   heap_list.push_back(item);
