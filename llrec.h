@@ -1,6 +1,5 @@
 #ifndef LLREC_H
 #define LLREC_H
-#include <iostream>
 #ifndef NULL
 #define NULL 0
 #endif
@@ -88,10 +87,10 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
-    if (DEBUG && head != nullptr)
+    /*if (DEBUG && head != nullptr)
     {
         cout << "curr head val: " << head->val << endl;
-    }
+    }*/
 
     if (head == nullptr)
     {
