@@ -6,7 +6,7 @@
 
 using namespace std; 
 
-template <typename T, typename PComparator = std::less<T>>
+template <typename T, typename PComparator = less<T>>
 class Heap
 {
 public:
